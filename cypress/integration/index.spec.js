@@ -8,7 +8,7 @@ describe('Testing the RedFox landing page', () => {
         cy.clearLocalStorage()
     });
 
-    it('test', () => {
+    it('RedFox Lanfing Page', () => {
         cy.visit('/')
         cy.contains('https://redfox.tech/wp-content/uploads/2021/10/logo.png').should('be.visible')
         cy.get('.jet-menu').contains('Home')
