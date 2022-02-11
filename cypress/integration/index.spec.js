@@ -10,7 +10,7 @@ describe('Testing the RedFox landing page', () => {
 
     it('RedFox Landing Page', () => {
         cy.visit('/')
-        cy.contains('https://redfox.tech/wp-content/uploads/2021/10/logo.png').should('be.visible')
+        cy.contains('http://redfox.tech/wp-content/uploads/2021/10/logo.png').should('be.visible')
         cy.get('.jet-menu').contains('Home')
         cy.get('.jet-menu').contains('Serviços')
         cy.get('.jet-menu').contains('Carreiras')
@@ -24,7 +24,7 @@ describe('Testing the RedFox landing page', () => {
         cy.get('#form-field-email').should('have.value', '').type('guilherme.manzano@redfox.tech')  
         cy.get('#form-field-field_e16b752').should('have.value', '').type('Assunto')  
         cy.get('#form-field-field_3239a2f').should('have.value', '').type('Lorem Ipsum is simply dummy text of the printing and typesetting industry.')
-        cy.get('#EMAIL61f4847f30de2').should('have.value', '').type('guilherme.manzano@redfox.tech').log('Newsletter')
+        cy.get('[name="EMAIL"]').should('have.value', '').type('guilherme.manzano@redfox.tech')
 
         cy.get('.elementor-element-6cad4eef > .elementor-widget-wrap')
         .scrollIntoView()
@@ -72,11 +72,11 @@ describe('Testing the RedFox landing page', () => {
         .contains('CONHEÇA ALGUMAS DE NOSSAS TRANSFORMAÇÕES')
 
         cy.get('.jet-portfolio__list')
-        .contains('https://redfox.tech/wp-content/uploads/2021/10/2a401-case-dralper-telemedicina-redfox.png')
+        .contains('http://redfox.tech/wp-content/uploads/2021/10/2a401-case-dralper-telemedicina-redfox.png')
         .log('Case Alper')
 
         cy.get('.jet-portfolio__list')
-        .contains('https://redfox.tech/wp-content/uploads/2021/10/3a40b-case-dasa-gestaodeprodutos-1-1024x576.png')
+        .contains('http://redfox.tech/wp-content/uploads/2021/10/3a40b-case-dasa-gestaodeprodutos-1-1024x576.png')
         .log('Case Dasa')
 
         cy.get('.elementor-element-a3a2f2 > .elementor-container > .elementor-column > .elementor-widget-wrap > .elementor-element > .elementor-widget-container > .elementor-button-wrapper > .elementor-button-link')
@@ -88,7 +88,7 @@ describe('Testing the RedFox landing page', () => {
         cy.get('#form-field-email').should('have.value', 'guilherme.manzano@redfox.tech').clear()
         cy.get('#form-field-field_e16b752').should('have.value', 'Assunto').clear()
         cy.get('#form-field-field_3239a2f').should('have.value', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.').clear()
-        cy.get('#EMAIL61f4847f30de2').should('have.value', 'guilherme.manzano@redfox.tech').clear().log('Newsletter')
+        cy.get('[name="EMAIL"]').should('have.value', 'guilherme.manzano@redfox.tech').clear
 
         cy.get('.elementor-element-19e01149 > .elementor-container > .elementor-column > .elementor-widget-wrap').contains('Instagram')
         cy.get('.elementor-element-19e01149 > .elementor-container > .elementor-column > .elementor-widget-wrap').contains('Linkedin')
