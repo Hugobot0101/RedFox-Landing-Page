@@ -24,7 +24,7 @@ describe('Testing the RedFox landing page', () => {
         cy.get('#form-field-email').should('have.value', '').type('guilherme.manzano@redfox.tech')  
         cy.get('#form-field-field_e16b752').should('have.value', '').type('Assunto')  
         cy.get('#form-field-field_3239a2f').should('have.value', '').type('Lorem Ipsum is simply dummy text of the printing and typesetting industry.')
-        cy.get('[name="EMAIL"]').should('have.value', '').type('guilherme.manzano@redfox.tech')
+        cy.get('[name="EMAIL"]').should('have.value', '').type('guilherme.manzano@redfox.tech').log('Newsletter')
 
         cy.get('.elementor-element-6cad4eef > .elementor-widget-wrap')
         .scrollIntoView()
@@ -88,7 +88,7 @@ describe('Testing the RedFox landing page', () => {
         cy.get('#form-field-email').should('have.value', 'guilherme.manzano@redfox.tech').clear()
         cy.get('#form-field-field_e16b752').should('have.value', 'Assunto').clear()
         cy.get('#form-field-field_3239a2f').should('have.value', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.').clear()
-        cy.get('[name="EMAIL"]').should('have.value', 'guilherme.manzano@redfox.tech').clear
+        cy.get('[name="EMAIL"]').should('have.value', 'guilherme.manzano@redfox.tech').clear.log('Newsletter')
 
         cy.get('.elementor-element-19e01149 > .elementor-container > .elementor-column > .elementor-widget-wrap').contains('Instagram')
         cy.get('.elementor-element-19e01149 > .elementor-container > .elementor-column > .elementor-widget-wrap').contains('Linkedin')
